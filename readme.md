@@ -9,7 +9,7 @@ All cases can not be automated. Code can work with the simple ones:
  - Street name and house number with letter
  - Street number with name and house number
 
-###Test Data
+### Test Data
 Test data are combined in JSON file (data/test_data.json)
  - input - the string before decoding
  - street and housenumber - expected results after decoding
@@ -24,11 +24,11 @@ test_data.json
       "housenumber": "3"
     }
     ```
-###Reports
+### Reports
 Reports are generated automatically and stored in
  target/surefire-reports/emailable-report.html
     
-###Tools used:
+### Tools used:
  - Java 8
  - TestNg
  - Maven
