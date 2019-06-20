@@ -11,13 +11,18 @@ All cases can not be automated. Code can work with the simple ones:
 
 
 ### Test Data
-Test data are combined in JSON file (data/test_data.json)
+Test data are stored in JSON file (data/test_data.json)
  - input - the address string before decoding;
  - street and housenumber - expected results after decoding;
  
 Code takes the input string, decodes it and compares with the expected relevant values from 
-test_data.json
+test_data.json.
 
+Test data are feeded one by one to the testcase and processed.
+There are 2 failing cases added on purpose to verify if the code works properly.
+
+    Example of test data for the testcase:
+    
     ```
     {
       "input": "Winterallee 3",
