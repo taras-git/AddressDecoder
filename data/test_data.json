@@ -44,6 +44,18 @@
       "input": "Calle 39 No 1540",
       "street": "Calle 39",
       "housenumber": "No 1540"
+    },
+    {
+      "//": "test case with this data should fail on Street decoding",
+      "input": "Calle 39 No 1540",
+      "street": "Cale 39",
+      "housenumber": "No 1540"
+    },
+    {
+      "//": "test case with this data should fail on HouseNumber decoding",
+      "input": "Calle 39 No 1540",
+      "street": "Calle 39",
+      "housenumber": "No l540"
     }
   ]
 }

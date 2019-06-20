@@ -31,25 +31,25 @@ public class AddressDecoder {
     );
 
 
-    public JsonObject generateJsonAddress(String address) {
+    public JsonObject decodedJsonAddress(String address) {
         String houseNumber;
 
         Matcher noWithNumberMatcher = noWithNumberPattern.matcher(address);
         while(noWithNumberMatcher.find()) {
             houseNumber = noWithNumberMatcher.group();
-            return generateJsonAddress(extractStreetName(address, houseNumber), houseNumber);
+            return decodedJsonAddress(extractStreetName(address, houseNumber), houseNumber);
         }
 
         Matcher numberWithLetterMatcher = numberWithLetterPattern.matcher(address);
         while(numberWithLetterMatcher.find()) {
             houseNumber = numberWithLetterMatcher.group();
-            return generateJsonAddress(extractStreetName(address, houseNumber), houseNumber);
+            return decodedJsonAddress(extractStreetName(address, houseNumber), houseNumber);
         }
 
         Matcher numberAndStreetMatcher = numberAndStreetPattern.matcher(address);
         while(numberAndStreetMatcher.find()) {
             houseNumber = numberAndStreetMatcher.group();
-            return generateJsonAddress(extractStreetName(address, houseNumber), houseNumber);
+            return decodedJsonAddress(extractStreetName(address, houseNumber), houseNumber);
         }
 
         return null;
@@ -65,7 +65,7 @@ public class AddressDecoder {
                 ;
     }
 
-    private static JsonObject generateJsonAddress(String street, String houseNumber){
+    private static JsonObject decodedJsonAddress(String street, String houseNumber){
         JsonObject address = new JsonObject();
         address.addProperty("street", street);
         address.addProperty("housenumber", houseNumber);
